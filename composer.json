@@ -1,0 +1,32 @@
+{
+    "name": "sakanjo/laravel-flashy",
+    "description": "Easy flash notifications for laravel",
+    "keywords": ["laravel", "inertia", "flash"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Salah Kanjo",
+            "email": "dev.salah.kanjo@gmail.com"
+        }
+    ],
+    "require": {
+      "php": ">=6.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Flashy\\": "src/"
+        },
+        "files": [
+          "./helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Flashy\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
