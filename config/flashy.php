@@ -5,9 +5,9 @@ return [
     'allowed_headers' => ['X-Inertia', 'X-Axios'],
 
     // Flash global errors with or without specifying a message
-    'flash_codes' => [
+    'flash_codes' => env('APP_ENV') === 'production' ? [
         404 => 'Page not found',
         500 => 'Something went wrong',
         419 => null,
-    ],
+    ] : [],
 ];
