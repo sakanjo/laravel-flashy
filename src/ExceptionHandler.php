@@ -13,8 +13,15 @@ class ExceptionHandler extends BaseExceptionHandler
     {
         $resp = parent::render($request, $e);
 
-        $codes = config('flashy')['status_codes'];
-        Error_If(in_array($resp->getStatusCode(), $codes), $e->getMessage());
+        $code = $resp->getStatusCode();
+        $allowed_headers = array_map('strtolower', config('flashy.allowed_headers'));
+
+        if (! collect($request->headers)->hasAny($allowed_headers)) {
+            return $resp;
+        }
+
+        collect(config('flashy.flash_codes'))
+          ->each(fn ($msg, $key) => Error_If($code === $key, $msg ?? $e->getMessage()));
 
         return $resp;
     }
