@@ -71,7 +71,7 @@ public function index() {
 Do you like this project? Support it by donating
 
 ## Maintainers
-Larvel flashy is developed and maintained by [Salah Kanjo](https://github.com/sakanjo)
+Laravel flashy is developed and maintained by [Salah Kanjo](https://github.com/sakanjo)
 
 ## License
 
