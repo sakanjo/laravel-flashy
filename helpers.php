@@ -5,9 +5,9 @@ use Flashy\Exceptions\FlashException;
 define('SUCCESS_FLASH', 'success');
 define('ERROR_FLASH', 'error');
 
-function Flash(string|null $message = null, array $props = null): void
+function Flash(string $type, string|null $message = null, array $props = null): void
 {
-    throw new FlashException(SUCCESS_FLASH, $message, $props);
+    throw new FlashException($type, $message, $props);
 }
 
 function Success(string|null $message = null, array $props = null): void
